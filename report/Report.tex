@@ -18,13 +18,13 @@
 
 \begin{document}
 
-\title{Deep Reinforcement Learning Project 2 : Continuous Control}
+\title{Deep Reinforcement Learning Project 3 : Collaboration and Competition}
 \author{Rachel Schlossman}
 
 \maketitle
 
 \section{Learning Algorithm}
-The learning algorithm is a modified implementation of the Deep Deterministic Policy Gradient (DDPG) algorithm \cite{lillicrap2015continuous} in order to be applicable to multi-agent reinforcement learning. It is important to note how this implementation is different from the multi-agent Deep Deterministic Policy Gradient (MADDPG) algorithm as described in \cite{lowe2017multi}. As the referenced paper describes, the algorithm is based on (1) each agent having its own actor network to approximate the actor function (decentralized exection) and (2) a centralized critic network with access to all agents' observations and actions (centralized learning). In contrast to this, the algorithm in this project leverages a single actor network and a single critic network (centralized execution and learning). The two networks are shared between the two agents; The actor network only has access to a single agent's observations and, similarly, the critic only has access to a single agent's observations and actions. So, at a single timestep, the same network parameters are used to devise both agents' policies and action-value functions. This strategy is appropriate for the Tennis environment because the environment is symmetric; the agents have the same observations, actions, and reward function; and neither agent is rewarded directly for beating the other agent.
+The learning algorithm is a modified implementation of the Deep Deterministic Policy Gradient (DDPG) algorithm \cite{lillicrap2015continuous} in order to be applicable to multi-agent reinforcement learning. It is important to note how this implementation is different from the multi-agent Deep Deterministic Policy Gradient (MADDPG) algorithm as described in \cite{lowe2017multi}. The MADDPG algorithm is based on (1) each agent having its own actor network to approximate the actor function (decentralized exection) and (2) a centralized critic network with access to all agents' observations and actions (centralized learning). In contrast to this, the algorithm in this project leverages a single actor network and a single critic network (centralized execution and learning). The two networks are shared between the two agents; The actor network only has access to a single agent's observations and, similarly, the critic only has access to a single agent's observations and actions. So, at a single timestep, the same network parameters are used to devise both agents' policies and action-value functions. This strategy is appropriate for the Tennis environment because the environment is symmetric; the agents have the same observations, actions, and reward function; and neither agent is rewarded directly for beating the other agent.
 
 
 \subsection{Hyperparameters}
