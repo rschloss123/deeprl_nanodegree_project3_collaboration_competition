@@ -1,10 +1,10 @@
-Report.log
-Report.synctex.gz
-Report.bbl
-Report.blg
-Report.dvi
-Report.log
-Report.aux
+report/Report.log
+report/Report.synctex.gz
+report/Report.bbl
+report/Report.blg
+report/Report.dvi
+report/Report.log
+report/Report.aux
 __pycache__/
 implementation/__pycache__/
 implementation/unity-environment.log
